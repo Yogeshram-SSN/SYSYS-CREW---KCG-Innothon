@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Success</title>
+    <script>
+      // Redirect after 5 seconds
+      setTimeout(function () {
+        window.location.href = "{{ url_for('staff_dashboard') }}"; // Redirect to the 'home' route
+      }, 5000);
+    </script>
+  </head>
+  <body>
+    <h2>{{username}} YOUR COMPLAINT HAS BEEN SUBMITTED SUCCESSFULLY!!</h2>
+    <p>You will be redirected to the homepage in 5 seconds...</p>
+  </body>
+</html>

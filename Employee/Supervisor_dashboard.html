@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employer Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        display: flex;
+        justify-content: flex-end; /* Align header content to the right */
+        padding: 10px;
+        background-color: white;
+      }
+
+      .user-info {
+        display: flex;
+        align-items: center;
+      }
+
+      .user-initial-circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #004080; /* Dark Blue */
+        color: white;
+        text-align: center;
+        line-height: 50px;
+        font-size: 24px;
+        margin-right: 10px;
+      }
+
+      #user-email {
+        font-size: 16px;
+        margin: 0;
+      }
+
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 200px;
+        background-color: #004080; /* Dark Blue */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+
+      .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        width: 100%;
+      }
+
+      .sidebar ul li {
+        padding: 20px;
+      }
+
+      .sidebar ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        display: block;
+      }
+
+      .sidebar ul li a:hover {
+        background-color: #003366; /* Slightly darker blue for hover */
+      }
+
+      main {
+        margin-left: 220px; /* Adjust according to sidebar width */
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="user-info">
+        <div class="user-initial-circle">E</div>
+        <p id="user-email">{{ username }}</p>
+      </div>
+    </header>
+
+    <div class="sidebar">
+      <ul>
+        <li><a href="/view-leave-request">Leave Request</a></li>
+        <li><a href="/supervisor_com_att">Attendance Log</a></li>
+        <li><a href="#">Raise Complaint</a></li>
+        <li><a href="#">Request Shift Change</a></li>
+      </ul>
+    </div>
+
+    <main>
+      <!-- Main content here -->
+    </main>
+  </body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll & Terminate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .side-menu {
+            position: fixed;
+            background: #0e4aa0;
+            width: 20vw;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .side-menu .brand-name {
+            height: 10vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #dc3442;
+        }
+
+        .side-menu li {
+            font-size: 24px;
+            padding: 10px 40px;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .side-menu li:hover {
+            background: #f05462;
+            padding: 8px 38px;
+            border-radius: 8px;
+        }
+
+        .side-menu li a {
+            color: white;
+        }
+
+        .container {
+            position: absolute;
+            right: 0;
+            width: 80vw;
+            height: 100vh;
+            background: #f1f1f1;
+        }
+
+        .container .header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 80vw;
+            height: 10vh;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .container .header .nav {
+            width: 90%;
+            display: flex;
+            align-items: center;
+        }
+
+        .container .header .nav .search {
+            flex: 3;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container .header .nav .search input[type=text] {
+            border: none;
+            background: #f1f1f1;
+            padding: 10px;
+            width: 50%;
+        }
+
+        .container .header .nav .search button {
+            width: 40px;
+            height: 40px;
+            border: none;
+        }
+
+        .container .header .nav .user {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container .header .nav .user img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .container .content {
+            position: relative;
+            margin-top: 10vh;
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-section label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .form-section input, .form-section select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .form-section button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .enroll-btn {
+            background-color: green;
+        }
+
+        .enroll-btn:hover {
+            background-color: darkgreen;
+        }
+
+        .terminate-btn {
+            background-color: red;
+        }
+
+        .terminate-btn:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="side-menu">
+        <div class="brand-name">
+            <h1>SYSYS CREW</h1>
+        </div>
+        <ul>
+            <li><img src="dashboard (2).png" alt="">&nbsp;<span><a href="index.html">Dashboard</a></span> </li>
+            <li><img src="work.png" alt="">&nbsp;<span><a href="workallocation.html">Work Allocation</a></span> </li>
+            <li><img src="teacher2.png" alt="">&nbsp;<span><a href="shift.html">Shift Status</a></span> </li>
+            <li><img src="report1.png" alt="">&nbsp;<span><a href="report.html">Report Analytics</a></span> </li>
+            <li><img src="report1.png" alt="">&nbsp;<span><a href="enroll-terminate.html">Enroll/Terminate</a></span> </li>
+            <li><img src="reading-book (1).png" alt="">&nbsp;<span><a href="grievances.html">Grievances</a></span> </li>
+            <li><img src="reading-book (1).png" alt="">&nbsp;<span><a href="">Performance Metrics</a></span> </li>            
+            <li><img src="attend.png" alt="">&nbsp;<span><a href="">Attendance Log</a></span> </li>
+            <li><img src="payment.png" alt="">&nbsp;<span>Payroll/Profile</span> </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="nav">
+                <div class="search">
+                    <input type="text" placeholder="Search..">
+                </div>
+                <div class="user">
+                    <button class="btn">Send Alert</button>
+                    <img src="user.png" alt="User Image">
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>Enroll & Terminate</h2>
+            <div class="form-section">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter name">
+
+                <label for="employee-id">Employee ID:</label>
+                <input type="text" id="employee-id" placeholder="Enter employee ID">
+
+                <label for="department">Department:</label>
+                <input type="text" id="department" placeholder="Enter department">
+
+                <label for="category">Category:</label>
+                <select id="category">
+                    <option value="employee">Employee</option>
+                    <option value="supervisor">Supervisor</option>
+                </select>
+
+                <button class="enroll-btn">Enroll</button>
+                <button class="terminate-btn">Terminate</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grievances</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        h1,
+        h2 {
+            color: #040303;
+        }
+
+        h3 {
+            color: #999;
+        }
+
+        .btn {
+            background: #0e4aa0;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            color: #f05462;
+            background: white;
+            padding: 3px 8px;
+            border: 2px solid #f05462;
+        }
+
+        .title {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 15px 10px;
+            border-bottom: 2px solid #999;
+        }
+
+        .side-menu {
+            position: fixed;
+            background: #0e4aa0;
+            width: 20vw;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .side-menu .brand-name {
+            height: 10vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #dc3442;
+        }
+
+        .side-menu li {
+            font-size: 24px;
+            padding: 10px 40px;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .side-menu li:hover {
+            background: #f05462;
+            color: white;
+            padding: 8px 38px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            position: absolute;
+            right: 0;
+            width: 80vw;
+            height: 100vh;
+            background: #f1f1f1;
+        }
+
+        .container .header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 80vw;
+            height: 10vh;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .container .header .nav {
+            width: 90%;
+            display: flex;
+            align-items: center;
+        }
+
+        .container .header .nav .search {
+            flex: 3;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container .header .nav .search input[type=text] {
+            border: none;
+            background: #f1f1f1;
+            padding: 10px;
+            width: 50%;
+        }
+
+        .container .header .nav .user {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container .header .nav .user img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .container .content {
+            position: relative;
+            margin-top: 10vh;
+            min-height: 90vh;
+            background: #f1f1f1;
+            padding: 20px;
+        }
+
+        .subheading {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .report-box {
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .report-box:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .report-content {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        .report-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .report-category {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .report-subject {
+            color: #888;
+        }
+
+        .report-timestamp {
+            font-size: 14px;
+            color: #888;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .dropdown-content {
+            display: none;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+            color: #333;
+        }
+
+        .report-box.expanded .dropdown-content {
+            display: block;
+        }
+
+        .report-box.expanded {
+            padding-bottom: 80px;
+        }
+
+        .report-box.expanded .dropdown-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="side-menu">
+        <div class="brand-name">
+            <h1>SYSYS CREW</h1>
+        </div>
+        <ul>
+            <li><img src="dashboard (2).png" alt="">&nbsp;<span><a href="index.html">Dashboard</a></span> </li>
+            <li><img src="work.png" alt="">&nbsp;<span><a href="workallocation.html">Work Allocation</a></span> </li>
+            <li><img src="teacher2.png" alt="">&nbsp;<span><a href="shift.html">Shift Status</a></span> </li>
+            <li><img src="report1.png" alt="">&nbsp;<span><a href="report.html">Report Analytics</a></span> </li>
+            <li><img src="report1.png" alt="">&nbsp;<span><a href="enroll-terminate.html">Enroll/Terminate</a></span> </li>
+            <li><img src="reading-book (1).png" alt="">&nbsp;<span><a href="grievances.html">Grievances</a></span> </li>
+            <li><img src="reading-book (1).png" alt="">&nbsp;<span><a href="">Performance Metrics</a></span> </li>            
+            <li><img src="attend.png" alt="">&nbsp;<span><a href="">Attendance Log</a></span> </li>
+            <li><img src="payment.png" alt="">&nbsp;<span>Payroll/Profile</span> </li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="nav">
+                <div class="search">
+                    <input type="text" placeholder="Search..">
+                    <!-- <button type="submit"><img src="search.png" alt=""></button> -->
+                </div>
+                <div class="user">
+                    <a href="#" class="btn">Send Alert</a>
+                    <div class="img-case">
+                        <img src="user.png" alt="User Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2 class="subheading">Grievances</h2>
+            <!-- Grievances will be dynamically inserted here -->
+            <div id="grievances-list"></div>
+        </div>
+    </div>
+
+    <script>
+        // Mock function to simulate fetching grievances from a server
+        function fetchGrievances() {
+            // Simulating grievance data
+            return [
+                {
+                    category: 'Financial',
+                    subject: 'Annual Revenue Report',
+                    description: 'This is a sample text 1 from AlienOmus (ANNUAL REVENUE).',
+                    timestamp: '10:30 AM',
+                    profileImg: 'user 6.png'
+                },
+                {
+                    category: 'Operations',
+                    subject: 'Production Efficiency Report',
+                    description: 'This is a sample text 2 from AlienOmus (PRODUCTION EFFICIENCY REPORT).',
+                    timestamp: '11:00 AM',
+                    profileImg: 'user 5.png'
+                },
+                {
+                    category: 'Human Resources',
+                    subject: 'Employee Satisfaction Survey',
+                    description: 'This is a sample text from AlienOmus (EMPLOYEE SATISFACTION SURVEY).',
+                    timestamp: '1:45 PM',
+                    profileImg: 'user 7.png'
+                },
+                {
+                    category: 'R&D',
+                    subject: 'Product Innovation Pipeline',
+                    description: 'This is a sample text from AlienOmus (PRODUCT INNOVATION).',
+                    timestamp: '2:15 PM',
+                    profileImg: 'user 5.png'
+                }
+            ];
+        }
+
+        function displayGrievances(grievances) {
+            const grievancesList = document.getElementById('grievances-list');
+            grievancesList.innerHTML = ''; // Clear existing grievances
+
+            grievances.forEach(grievance => {
+                // Create grievance box
+                const reportBox = document.createElement('div');
+                reportBox.classList.add('report-box');
+
+                reportBox.innerHTML = `
+                    <div class="report-content">
+                        <div class="report-details">
+                            <span class="report-category">${grievance.category}</span>
+                            <span class="report-subject">${grievance.subject}</span>
+                        </div>
+                        <div class="report-timestamp">${grievance.timestamp}</div>
+                    </div>
+                    <div class="dropdown-content">
+                        <p>${grievance.description}</p>
+                    </div>
+                `;
+
+                // Add event listener for toggling dropdown
+                reportBox.addEventListener('click', () => {
+                    reportBox.classList.toggle('expanded');
+                });
+
+                // Append to grievances list
+                grievancesList.appendChild(reportBox);
+            });
+        }
+
+        // Fetch and display grievances on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const grievances = fetchGrievances();
+            displayGrievances(grievances);
+        });
+    </script>
+</body>
+
+</html>

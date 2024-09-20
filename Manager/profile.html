@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .side-menu {
+            position: fixed;
+            background: #0e4aa0;
+            width: 20vw;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .side-menu .brand-name {
+            height: 10vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #dc3442;
+        }
+
+        .side-menu li {
+            font-size: 24px;
+            padding: 10px 40px;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .side-menu li:hover {
+            background: #f05462;
+            padding: 8px 38px;
+            border-radius: 8px;
+        }
+
+        .side-menu li a {
+            color: white;
+        }
+
+        .container {
+            position: absolute;
+            right: 0;
+            width: 80vw;
+            height: 100vh;
+            background: #f1f1f1;
+        }
+
+        .container .header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 80vw;
+            height: 10vh;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .container .header .nav {
+            width: 90%;
+            display: flex;
+            align-items: center;
+        }
+
+        .container .header .nav .search {
+            flex: 3;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container .header .nav .search input[type=text] {
+            border: none;
+            background: #f1f1f1;
+            padding: 10px;
+            width: 50%;
+        }
+
+        .container .header .nav .search button {
+            width: 40px;
+            height: 40px;
+            border: none;
+        }
+
+        .container .header .nav .user {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container .header .nav .user img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .container .content {
+            position: relative;
+            margin-top: 10vh;
+            padding: 20px;
+            display: flex;
+        }
+
+        .profile-info {
+            flex: 2;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .info-section {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .salary-status {
+            cursor: pointer;
+            color: #0e4aa0;
+            text-decoration: underline;
+        }
+
+        .allowances {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .performance-chart {
+            flex: 1;
+            background-color: #fff;
+            margin-left: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .total-salary {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="side-menu">
+        <div class="brand-name">
+            <h1>SYSYS CREW</h1>
+        </div>
+        <ul>
+            <li><img src="dashboard (2).png" alt="">&nbsp;<span><a href="index.html">Dashboard</a></span> </li>
+            <li><img src="work.png" alt="">&nbsp;<span><a href="workallocation.html">Work Allocation</a></span> </li>
+            <li><img src="teacher2.png" alt="">&nbsp;<span><a href="shift.html">Shift Status</a></span> </li>
+            <li><img src="report1.png" alt="">&nbsp;<span><a href="report.html">Report Analytics</a></span> </li>
+            <li><img src="report1.png" alt="">&nbsp;<span><a href="enroll-terminate.html">Enroll/Terminate</a></span> </li>
+            <li><img src="reading-book (1).png" alt="">&nbsp;<span><a href="grievances.html">Grievances</a></span> </li>
+            <li><img src="reading-book (1).png" alt="">&nbsp;<span><a href="">Performance Metrics</a></span> </li>            
+            <li><img src="attend.png" alt="">&nbsp;<span><a href="">Attendance Log</a></span> </li>
+            <li><img src="payment.png" alt="">&nbsp;<span><a href="profile.html">/Profile</a></span> </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="nav">
+                <div class="search">
+                    <input type="text" placeholder="Search..">
+                </div>
+                <div class="user">
+                    <button class="btn">Send Alert</button>
+                    <img src="user.png" alt="User Image">
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="profile-info">
+                <h2>Manager Profile</h2>
+                <div class="info-section">
+                    <p><strong>Name:</strong> John Doe</p>
+                    <p><strong>Current Salary:</strong> $5000 <span class="salary-status" onclick="toggleAllowances()">View Allowances</span></p>
+                    <div class="allowances">
+                        <p><strong>Allowances:</strong></p>
+                        <ul>
+                            <li>Housing: $1000</li>
+                            <li>Travel: $500</li>
+                            <li>Health: $300</li>
+                        </ul>
+                        <p class="total-salary"><strong>Total Salary:</strong> $6800</p>
+                    </div>
+                    <p><strong>Department:</strong> Operations</p>
+                    <p><strong>Experience:</strong> 5 Years</p>
+                </div>
+            </div>
+            <div class="performance-chart">
+                <h3>Performance Metrics</h3>
+                <canvas id="performancePieChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleAllowances() {
+            const allowances = document.querySelector('.allowances');
+            const salaryStatus = document.querySelector('.salary-status');
+            if (allowances.style.display === 'none') {
+                allowances.style.display = 'block';
+                salaryStatus.textContent = 'Hide Allowances';
+            } else {
+                allowances.style.display = 'none';
+                salaryStatus.textContent = 'View Allowances';
+            }
+        }
+
+        // Example: Creating a pie chart using Chart.js library
+        var ctx = document.getElementById('performancePieChart').getContext('2d');
+        var performancePieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Work Completed', 'Overdue', 'In Progress'],
+                datasets: [{
+                    data: [65, 10, 25], // Replace with actual data
+                    backgroundColor: ['#28a745', '#dc3545', '#ffc107'],
+                }]
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

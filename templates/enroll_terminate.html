@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll/Terminate User</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        h2 {
+            text-align: center;
+            color: #3b82f6;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input, select {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+        button {
+            padding: 10px;
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2563eb;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .termination-section {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enroll/Terminate User</h2>
+        <form id="userForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter email" required>
+
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+                <option value="employee">Employee</option>
+                <option value="supervisor">Supervisor</option>
+            </select>
+
+            <div class="buttons">
+                <button type="button" id="enrollBtn">Enroll User</button>
+                <button type="button" id="terminateBtn">Terminate User</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Handle Enrollment Button
+        document.getElementById('enrollBtn').addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const category = document.getElementById('category').value;
+
+            if (name && email && category) {
+                // Simulate sending an email to the enrolled user
+                alert(`User ${name} (${category}) has been enrolled! A confirmation email has been sent to ${email}.`);
+                // Add backend functionality for sending the email here
+            } else {
+                alert('Please fill out all the fields before enrolling.');
+            }
+        });
+
+        // Handle Termination Button
+        document.getElementById('terminateBtn').addEventListener('click', function() {
+            const email = document.getElementById('email').value;
+
+            if (email) {
+                // Simulate removing the user from the system
+                alert(`User with email ${email} has been terminated and removed from the system.`);
+                // Add backend functionality for removing the user here
+            } else {
+                alert('Please enter the email of the user to be terminated.');
+            }
+        });
+    </script>
+</body>
+</html>

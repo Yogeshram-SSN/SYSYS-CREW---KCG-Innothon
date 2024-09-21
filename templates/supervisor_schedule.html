@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervisor Work Schedule</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Sidebar (navbar) */
+        .navbar {
+            width: 250px;
+            background-color: #0E4AA0;
+            color: white;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow: auto;
+        }
+
+        .navbar h2 {
+            margin: 0;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .navbar nav {
+            margin-top: 20px;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            margin-bottom: 20px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #0b3e7f;
+        }
+
+        /* Main container */
+        .container {
+            margin-left: 300px;
+            /* Adjusted to align properly */
+            width: 60%;
+            /* Smaller width for a compact look */
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 50px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #0E4AA0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0E4AA0;
+            color: white;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        .message {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .navbar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .container {
+                margin-left: 0;
+                width: 90%;
+                /* Adjust for smaller screens */
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar (Navbar) -->
+    <div class="navbar">
+        <h2>Supervisor Dashboard</h2>
+        <nav>
+            <ul>
+                <li><a href="/allocate_work"><strong>Allocate Work</strong></a></li>
+                <li><a href="/current_shift_schedule"><strong>Current Shift Status</strong></a></li>
+                <li><a href="/generate_report"><strong>Generate Report</strong></a></li>
+                <li><a href="/key_metrics"><strong>Performance Metrics</strong></a></li>
+                <li><a href="/leave_approval"><strong>Leave Approval</strong></a></li>
+                <li><a href="/attendance_log"><strong>Attendance Log</strong></a></li>
+                <li><a href="/grievances"><strong>Grievances</strong></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main content -->
+    <div class="container">
+        <h2>Work Schedule for Supervisor: Yuthika</h2>
+
+        <!-- Static content -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Priority</th>
+                    <th>Deadline</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>I need 50 units</td>
+                    <td>Medium</td>
+                    <td>2024-09-25</td>
+                </tr>
+                >
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+
+</html>

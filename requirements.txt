@@ -7,3 +7,8 @@ streamlit
 streamlit-webrtc
 insightface
 onnxruntime
+flask_cors
+flask_session
+flask
+json
+random

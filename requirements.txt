@@ -10,3 +10,4 @@ onnxruntime
 flask_cors
 flask_session
 flask
+gunicorn
